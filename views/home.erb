@@ -1,0 +1,32 @@
+<%# erb = Embedded Ruby %>
+<%# write RUBY inside the HTML %>
+
+<h1>
+  My Restaurants
+</h1>
+
+<%# On Thursday next week with Yair %>
+<%# GET - READING %>
+<%# POST - CREATING %>
+<h3>Create a Restaurant</h3>
+<form action="/restaurants" method="post">
+  <label for="restaurant_name"> Name </label>
+  <input type="text" name="restaurant_name" id="restaurant_name" >
+  <label for="restaurant_city"> City </label>
+  <input type="text" name="restaurant_city" id="restaurant_city">
+  <input type="submit">
+</form>
+
+<hr>
+
+<%# iterate over all restaurants %>
+<%# create an <li> for each restaurant %>
+<ol>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <a href="/restaurants/<%= restaurant.id %>"> 
+        <%= restaurant.name %>
+      </a>
+    </li>
+  <% end %>
+</ol>

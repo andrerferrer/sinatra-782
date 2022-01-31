@@ -1,0 +1,11 @@
+<h2>Welcome to <%= @restaurant.name %> </h2>
+
+<p>
+  Find us in <%= @restaurant.city %>
+
+  <% if @restaurant.city == 'Munich' %>
+    Here is a 50% discount coupon => "50MUNICHLOVE"
+  <% end %>
+</p>
+
+<a href="/">Go Back</a>
